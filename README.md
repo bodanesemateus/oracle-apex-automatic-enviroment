@@ -58,6 +58,35 @@ Você precisa de uma conta no [Oracle Container Registry](https://container-regi
 docker login container-registry.oracle.com
 ```
 
+## 🚀 Instalação Rápida (One-Click Setup)
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/oracle-apex-docker.git
+cd oracle-apex-docker
+
+# Execute o script de criação
+chmod +x create_structure.sh
+./create_structure.sh
+
+# Suba o Oracle Database (aguarde ~15-25 min)
+docker compose up -d oracle21
+
+# Após "DATABASE IS READY TO USE!", suba o ORDS
+docker compose up -d ords
+```
+
+O script `create_structure.sh` cria automaticamente toda a estrutura necessária:
+- ✅ Valida Docker, Docker Compose e login no Oracle Container Registry
+- ✅ Detecta estrutura existente e pergunta se deseja sobrescrever
+- ✅ Configuração interativa ou via arquivo `settings.ini`
+- ✅ Gera `docker-compose.yaml` personalizado
+- ✅ Cria scripts de instalação do APEX e configuração SSL
+- ✅ Configura permissões automaticamente
+
+> 💡 **Dica**: Crie um arquivo `settings.ini` antes de executar o script para pular a configuração interativa. Use o `settings.ini.example` como base.
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Clone o repositório
@@ -742,9 +771,6 @@ Contribuições são bem-vindas! Por favor:
 4. Push para a branch (`git push origin feature/nova-feature`)
 5. Abra um Pull Request
 
-## 📄 Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## ⚠️ Disclaimer
 
@@ -761,5 +787,3 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 - [Oracle Container Registry](https://container-registry.oracle.com/)
 
 ---
-
-**Desenvolvido com ❤️ para a comunidade DevOps e DBA**
