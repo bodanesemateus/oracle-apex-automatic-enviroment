@@ -1,0 +1,52 @@
+# ============================================
+# Oracle APEX Docker - Configurações
+# ============================================
+# Este arquivo é gerado automaticamente pelo create_structure.sh
+# Você também pode criá-lo manualmente antes de executar o script
+# ============================================
+
+[database]
+# System Identifier do Oracle
+ORACLE_SID=EE
+
+# Nome do Pluggable Database
+ORACLE_PDB=SE
+
+# Senha do SYS/SYSTEM (mínimo 8 caracteres, 1 maiúscula, 1 número)
+ORACLE_PWD=OracleDb21
+
+# Character set do banco
+ORACLE_CHARACTERSET=AL32UTF8
+
+# Número de CPUs alocadas
+INIT_CPU_COUNT=4
+
+[apex]
+# Senha do usuário ADMIN do APEX (mínimo 8 caracteres, 1 maiúscula, 1 número, 1 especial)
+APEX_ADMIN_PWD=OracleApex21!
+
+# Email do administrador APEX
+APEX_ADMIN_EMAIL=admin@local
+
+[ords]
+# Domínio para acesso via reverse proxy (deixe vazio para acesso local)
+ORDS_DOMAIN=
+
+# Porta HTTP do ORDS
+ORDS_HTTP_PORT=8080
+
+# Porta HTTPS do ORDS
+ORDS_HTTPS_PORT=8443
+
+[general]
+# Timezone (ex: America/Sao_Paulo, UTC, Europe/London)
+TIMEZONE=America/Sao_Paulo
+
+# Nome do container Oracle
+ORACLE_CONTAINER_NAME=oracle-21.3.0-1
+
+# Nome do container ORDS
+ORDS_CONTAINER_NAME=ords
+
+# Nome da rede Docker
+DOCKER_NETWORK=oraclenetwork
